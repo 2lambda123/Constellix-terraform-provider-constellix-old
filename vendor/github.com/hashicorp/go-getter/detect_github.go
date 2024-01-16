@@ -40,6 +40,8 @@ func (d *GitHubDetector) detectHTTP(src string) (string, bool, error) {
 	}
 
 	if len(parts) > 3 {
+		url.Path += "/" + strings.Join(parts[3:], "/")
+	
 		url.Path += "//" + strings.Join(parts[3:], "/")
 	}
 
